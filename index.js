@@ -3,13 +3,13 @@ const app = express();
 const port = 8000;
 const path = require('path');                       // path in inbuilt module of express
 const bodyParser = require('body-parser');         // body-parser module is used to decrypt the form data as form data.
-// const mongoose = require('./config/mongoose');
+const mongoose = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const passport = require('passport');
-// const passportLocal = require('./config/passport-local-auth');
-// const passportGoogle = require('./config/passport-google-auth');
+const passportLocal = require('./config/passport-local-auth');
+const passportGoogle = require('./config/passport-google-auth');
 const flash = require('connect-flash');   
 // const env = require('./config/environment');                          
 const customMware = require('./config/middleware');
@@ -57,7 +57,7 @@ app.use(session({
 // intializing passoport
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(passport.setAuthenticatedUser);
+app.use(passport.setAuthenticatedUser);
 
 
 app.use(flash());

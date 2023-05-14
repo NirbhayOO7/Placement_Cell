@@ -1,1 +1,10 @@
 <p>This is HomePage.</p>
+
+<% if(locals.user){ %>
+    <div>
+        <a href="/student/">Click here to view and add new Student.</a>
+    </div>
+    <div>
+        <a href="/interview/">Click here to view and add new Interview.</a>
+    </div>
+<%}%>

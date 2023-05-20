@@ -51,7 +51,9 @@ module.exports.create = async function(req, res){
         }
     }
     catch(err){
-        console.log("Error creating user", err);
+        console.log("Error creating employee", err);
+        req.flash('Error creating employee', error);
+        return res.redirect('back');
     }
 
 }

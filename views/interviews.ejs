@@ -1,1 +1,33 @@
 <h2>This is interview page</h2>
+<% if(locals.user){ %>
+    <form action="/interview/create" method="post">
+        <label for="company">Enter company</label>
+        <input type="text" id="company" name="company"  required placeholder="Enter company name...">
+        <label for="date">Interview Date:</label>
+        <input type="date" name="date" id="date">
+        <input type="submit" value="Submit">
+    </form>
+
+    <% for(interview of interviews){ %>
+        <p><%= interview.company %></p>
+        <p><%= interview.date %></p>
+
+        <form action="/interview/add-student/<%= interview.id %>" method="post" class="interview-add-student">
+            <label for="student_id">Enter Student id:</label>
+            <input type="text" name="studentId" required id="student_id" placeholder="Enter student id...">
+            <select name="result" id="result">
+                <option value="PASS">PASS</option>
+                <option value="FAIL">FAIL</option>
+                <option value="ON HOLD">ON HOLD</option>
+                <option value="DID NOT ATTEMPT">DID NOT ATTEMPT</option>
+            </select>
+            <input type="submit" value="Add Student">
+        </form>
+
+        <% for(stud of interview.students){ %>
+            <p><%= stud.student.name %></p>
+            <p><%= stud.result %></p>
+        <%}%>
+    <%}%>
+
+<%}%>

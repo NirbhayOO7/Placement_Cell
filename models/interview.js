@@ -5,11 +5,11 @@ const InterviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    data:{
+    date:{
         type: Date,
         required: true
     },
-    studensts:[
+    students: [
         {
             student:{
                 type: mongoose.Schema.Types.ObjectId,

@@ -1,1 +1,20 @@
 <h2>This is Student page</h2>
+<form action="/student/create" method="POST" id="student-form">
+    <label for="name">Enter name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter Student Name...">
+    <label for="batch">Enter batch:</label>
+    <input type="text" id="batch" name="batch" required placeholder="Enter Student Batch...">
+    <label for="college">Enter college:</label>
+    <input type="text" id="college" name="college" required placeholder="Enter Student College...">
+    <label for="status">Placed/Not Placed:</label>
+    <select name="status" id="status" form="student-form">
+        <option value="placed">Placed</option>
+        <option value="not_placed">Not Placed</option>
+    </select>
+    <label for="dsa">Enter DSA-Score:</label>
+    <input type="number" id="dsa" name="dsaScore" required placeholder="0-100">
+    <label for="webd">Enter WebDev-Score:</label>
+    <input type="number" id="webd" name="webDScore" required placeholder="0-100">
+    <label for="react">Enter React-Score:</label>
+    <input type="number" id="react" name="reactScore" required placeholder="0-100">
+</form>

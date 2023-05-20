@@ -65,12 +65,17 @@ module.exports.createSession = function(req, res){
 // employee logging out.
 module.exports.destroySession = function(req, res){
 
-    req.logout(function(err){
-        if(err){
-            console.log('Error while logging out of the session')
-        }
-
-        req.flash('success', 'You have logged out!')
+    if(req.user){
+        req.logout(function(err){
+            if(err){
+                console.log('Error while logging out of the session')
+            }
+    
+            req.flash('success', 'You have logged out!')
+            return res.redirect('/');
+        });
+    }
+    else{
         return res.redirect('/');
-    });
+    }
 }

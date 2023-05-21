@@ -1,0 +1,69 @@
+
+#new-student{
+    width: 50vw;
+    margin: auto;
+
+    border-bottom: 2px solid black;
+}
+
+#flex-row-style{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+label{
+    display: inline-block;
+    width: 150px;
+}
+
+#status{
+    width: 170px;
+    height: 35px;
+}
+
+input{
+    height: 35px;
+    margin: 10px 0px;
+}
+
+
+.links{
+    border: none;
+    padding: 10px 20px;
+    width: inherit;
+    height: inherit;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+
+#student-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.student{
+    width: 250px;
+    /* border: 2px solid black; */
+    margin: 10px;
+}
+
+.basic-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(83, 152, 129);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.scores{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(130, 239, 239);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}

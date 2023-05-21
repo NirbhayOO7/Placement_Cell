@@ -1,0 +1,35 @@
+header{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(40 37 37);
+    align-items: center;
+    color: white;
+}
+
+#logo{
+    width: 150px;
+    height: 70px;
+}
+
+#user-section{
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+#user-section button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(113, 111, 111);
+}
+
+#user-name{
+    margin-top: 25px;
+    font-size: large;
+}
+
+#user-section button a{
+    color: white;
+}
+

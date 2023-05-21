@@ -1,0 +1,11 @@
+body{
+   margin: 0px;
+   background-color: beige;
+   width: 100vw;
+   overflow-x: hidden;
+}
+
+main{
+   min-height: 80vh;
+   margin: 0% 10%;
+}

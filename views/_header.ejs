@@ -1,5 +1,13 @@
+<link rel="stylesheet" href="/css/header.css">
 <header>
     <div>
-        <h2>Placement Cell!</h2>
+        <a href="/"><img id="logo" src="/images/logo.png" alt="logo"></a>
+    </div>
+    <div id="user-section">
+        <% if(locals.user){ %>
+            <p><button><a href="/download/csv">Download Report!</a></button></p>
+            <p id="user-name"><%= locals.user.name %></p>
+            <p><button><a href="/employee/sign-out">Logout</a></button></p>
+        <%}%>
     </div>
 </header>

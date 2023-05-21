@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="/css/footer.css">
 <footer>
-    <h3>Footer!</h3>
+    <% if(locals.user){ %>
+        <p><a href="/student/">Click here to add students</a></p>
+        <p><a href="/interview/">Click here to add Interviews</a></p>
+    <%}%>
 </footer>

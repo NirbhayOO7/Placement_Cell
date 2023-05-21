@@ -1,6 +1,8 @@
 const Interviews = require('../models/interview');
 const Students = require('../models/student');
 
+
+// render interviews-homepage
 module.exports.home = async function(req, res){
 
     try {
@@ -19,6 +21,7 @@ module.exports.home = async function(req, res){
 
 }
 
+// create new interviews 
 module.exports.create =async function(req, res){
     try {
         let interview =await Interviews.findOne({company: req.body.company, date: req.body.date});
@@ -39,6 +42,7 @@ module.exports.create =async function(req, res){
     }
 }
 
+// add students to interviews 
 module.exports.addStudent = async function(req, res){
     try {
         let student = await Students.findById(req.body.studentId);
@@ -83,3 +87,4 @@ module.exports.addStudent = async function(req, res){
         return res.redirect('back');
     }
 }
+

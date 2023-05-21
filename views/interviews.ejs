@@ -1,33 +1,65 @@
-<h2>This is interview page</h2>
+<link rel="stylesheet" href="/css/interviews.css">
+<h2 style="text-align: center;">Interview page</h2>
 <% if(locals.user){ %>
-    <form action="/interview/create" method="post">
-        <label for="company">Enter company</label>
-        <input type="text" id="company" name="company"  required placeholder="Enter company name...">
-        <label for="date">Interview Date:</label>
-        <input type="date" name="date" id="date">
-        <input type="submit" value="Submit">
-    </form>
-
-    <% for(interview of interviews){ %>
-        <p><%= interview.company %></p>
-        <p><%= interview.date %></p>
-
-        <form action="/interview/add-student/<%= interview.id %>" method="post" class="interview-add-student">
-            <label for="student_id">Enter Student id:</label>
-            <input type="text" name="studentId" required id="student_id" placeholder="Enter student id...">
-            <select name="result" id="result">
-                <option value="PASS">PASS</option>
-                <option value="FAIL">FAIL</option>
-                <option value="ON HOLD">ON HOLD</option>
-                <option value="DID NOT ATTEMPT">DID NOT ATTEMPT</option>
-            </select>
-            <input type="submit" value="Add Student">
+    <div id="new-interview">
+        <form action="/interview/create" method="post">
+            <h3 style="color: #6d4af8c4; text-align: center;">Add Interview</h3>
+            <div id="flex-row-style">
+                <div>
+                    <label for="company">Enter company:</label>
+                    <input type="text" id="company" name="company"  required placeholder="Enter company name...">
+                </div>
+                <div>
+                    <label for="date">Interview Date:</label>
+                    <input type="date" name="date" id="date">
+                </div>
+            </div>
+            <div style="margin-left: 42%;">
+                <input type="submit" value="Submit" class="links">
+            </div>
         </form>
+    </div>
+    <h3 style="color: #6d4af8c4; text-align: center;">Interviews List</h3>
 
-        <% for(stud of interview.students){ %>
-            <p><%= stud.student.name %></p>
-            <p><%= stud.result %></p>
+    <div id="interview-list">
+        <% for(interview of interviews){ %>
+            <div class="interview">
+                <div>
+                    <p><b><%= interview.company %></b></p>
+                </div>
+                <div>
+                    <p><b><%= interview.date %></b></p>
+                </div>
+                <div>
+                    <form action="/interview/add-student/<%= interview.id %>" method="post" class="interview-add-student">
+                        <div>
+                            <label for="student_id">Enter Student id:</label>
+                            <input type="text" name="studentId" required id="student_id" placeholder="Enter student id...">
+                        </div>
+                        <div>
+                            <select name="result" id="result">
+                                <option value="PASS">PASS</option>
+                                <option value="FAIL">FAIL</option>
+                                <option value="ON HOLD">ON HOLD</option>
+                                <option value="DID NOT ATTEMPT">DID NOT ATTEMPT</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="submit" value="Submit" class="links">
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <p><b>Name</b></p>
+                    <p><b>Result</b></p>
+                </div>
+        
+                <% for(stud of interview.students){ %>
+                    <p><%= stud.student.name %></p>
+                    <p><%= stud.result %></p>
+                <%}%>
+            </div>
         <%}%>
-    <%}%>
+    </div>
 
 <%}%>

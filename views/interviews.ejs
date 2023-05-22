@@ -4,7 +4,7 @@
     <div id="new-interview">
         <form action="/interview/create" method="post">
             <h3 style="color: #6d4af8c4; text-align: center;">Add Interview</h3>
-            <div id="flex-row-style">
+            <div id="flex-col-style">
                 <div>
                     <label for="company">Enter company:</label>
                     <input type="text" id="company" name="company"  required placeholder="Enter company name...">
@@ -28,36 +28,41 @@
                     <p><b><%= interview.company %></b></p>
                 </div>
                 <div>
-                    <p><b><%= interview.date %></b></p>
+                    <p><b>Date: <%= interview.date %></b></p>
                 </div>
                 <div>
                     <form action="/interview/add-student/<%= interview.id %>" method="post" class="interview-add-student">
+                        <h3 style="color: #6d4af8c4; text-align: center;">Add students to interview</h3>
                         <div>
                             <label for="student_id">Enter Student id:</label>
                             <input type="text" name="studentId" required id="student_id" placeholder="Enter student id...">
                         </div>
                         <div>
-                            <select name="result" id="result">
+                            <label for="result">Result: </label>
+                            <select name="result" class="result">
                                 <option value="PASS">PASS</option>
                                 <option value="FAIL">FAIL</option>
                                 <option value="ON HOLD">ON HOLD</option>
                                 <option value="DID NOT ATTEMPT">DID NOT ATTEMPT</option>
                             </select>
                         </div>
-                        <div>
-                            <input type="submit" value="Submit" class="links">
+                        <div style="margin-left: 34%;">
+                            <input type="submit" value="Add" class="links">
                         </div>
                     </form>
                 </div>
-                <div>
+                <div class="row">
                     <p><b>Name</b></p>
                     <p><b>Result</b></p>
                 </div>
         
                 <% for(stud of interview.students){ %>
-                    <p><%= stud.student.name %></p>
-                    <p><%= stud.result %></p>
+                    <div class="row">
+                        <p><%= stud.student.name %></p>
+                        <p><%= stud.result %></p>
+                    </div>
                 <%}%>
+
             </div>
         <%}%>
     </div>

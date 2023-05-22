@@ -33,6 +33,7 @@ input{
 }
 
 .interview{
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,6 +41,8 @@ input{
     background-color: rgb(83, 152, 129);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 select{
@@ -48,13 +51,17 @@ select{
     margin: 10px 0px;
 }
 
-.row{
+.col{
     width: 293px;
     display: flex;
     justify-content: space-between;
 }
 
-.interview-add-student{
+.col-heading{
+    background-color: rgb(255, 255, 255);
+}
+
+.colorMid{
     background-color: rgb(199, 221, 223);
 }
 

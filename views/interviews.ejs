@@ -30,7 +30,7 @@
                 <div>
                     <p><b>Date: <%= interview.date %></b></p>
                 </div>
-                <div>
+                <div class="colorMid">
                     <form action="/interview/add-student/<%= interview.id %>" method="post" class="interview-add-student">
                         <h3 style="color: #6d4af8c4; text-align: center;">Add students to interview</h3>
                         <div>
@@ -51,13 +51,13 @@
                         </div>
                     </form>
                 </div>
-                <div class="row">
+                <div class="col col-heading">
                     <p><b>Name</b></p>
                     <p><b>Result</b></p>
                 </div>
         
                 <% for(stud of interview.students){ %>
-                    <div class="row">
+                    <div class="col">
                         <p><%= stud.student.name %></p>
                         <p><%= stud.result %></p>
                     </div>

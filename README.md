@@ -1,4 +1,5 @@
-⭐ Introduction
+⭐ 
+# Introduction
 The Placement Cell Application is a Full Stack Application built using MongoDB, ExpressJS, NodeJS, EJS, Express Partials-Layouts, Vanilla JS & implements CRUD Operations. 
 
 This project is basically used for the purpose of assigning students to the interview slots of the incoming companies for the visit, at the backend for the employees to work. It manages both student & interview information along with the company visits. This website is only restricted for the use of employees.
@@ -18,7 +19,8 @@ Employee can add empty interview slots in a company, assign students to the inte
 The CSV Parser converts JSON to CSV File format & downloads the student report with all the details into your system.
 
 
-🔨 Tools Used
+🔨 
+# Tools Used
 ![HTML](./assets/images/HTML.png)
 ![CSS](./assets/images/CSS.png)
 ![JS](./assets/images/JS.png)
@@ -27,7 +29,7 @@ The CSV Parser converts JSON to CSV File format & downloads the student report w
 ![MongoDB](./assets/images/mongodb.png)
 ![Vscode](./assets/images/vscode.png)
 
-Library:version :-
+# Library:version :-
 "bcryptjs": "^2.4.3",
 "body-parser": "^1.20.2",
 "connect-flash": "^0.1.1",

@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 3030;
 const path = require('path');                       // path in inbuilt module of express
 const bodyParser = require('body-parser');         // body-parser module is used to decrypt the form data as form data.
 const mongoose = require('./config/mongoose');

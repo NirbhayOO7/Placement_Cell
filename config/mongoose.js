@@ -6,7 +6,7 @@ main().catch(err => console.log('Error connecting to MongoDB Placement Cell',err
 // setting up mongoose configuration 
 async function main(){
 
-    await mongoose.connect('mongodb://mongo:ZltxxwxqkjpTxU3HnjYh@containers-us-west-117.railway.app:7611');
+    await mongoose.connect(process.env.db||'mongodb://loaclhost:27017/Placement_Cell');
     db = mongoose.connection;
     console.log('Connected to Database :: MongoDB');
 } 

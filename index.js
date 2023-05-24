@@ -44,7 +44,7 @@ app.use(session({
     },
     store: MongoStore.create(
         {
-            mongoUrl: 'mongodb://mongo:ZltxxwxqkjpTxU3HnjYh@containers-us-west-117.railway.app:7611',
+            mongoUrl: process.env.db || 'mongodb://localhost/Placement_Cell',
             autoRemove: 'disabled'
         },
         function(err){

@@ -1,4 +1,4 @@
-; https://placementcell-production-4d9b.up.railway.app/employee/sign-inClick on this link to chec the application live
+Click on this link to chec the application live: https://placementcell-production-4d9b.up.railway.app/employee/sign-in
 ⭐ 
 # Introduction
 The Placement Cell Application is a Full Stack Application built using MongoDB, ExpressJS, NodeJS, EJS, Express Partials-Layouts, Vanilla JS & implements CRUD Operations. 

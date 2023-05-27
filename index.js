@@ -44,7 +44,7 @@ app.use(session({
     },
     store: MongoStore.create(
         {
-            mongoUrl: process.env.db || 'mongodb://localhost/Placement_Cell',
+            mongoUrl: (process.env.db || 'mongodb://localhost/Placement_Cell'),
             autoRemove: 'disabled'
         },
         function(err){

@@ -48,6 +48,7 @@
         
             <div class="student">
                 <div class="basic-details">
+                    <a href="/student/delete/<%= stud.id %>" class="delete"><i class="fa-solid fa-delete-left"></i></a>
                     <h3><%= stud.name %></h3>
                     <p><b>ID:</b><%= stud.id %></p>
                     <p><b>Batch:</b><%= stud.batch %></p>
@@ -65,3 +66,4 @@
     </div>
 
 <%}%>
+<script src="https://kit.fontawesome.com/01fcbb8cc8.js" crossorigin="anonymous"></script>

@@ -33,6 +33,7 @@ input{
 }
 
 .interview{
+    position: relative;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -43,6 +44,14 @@ input{
     border-top-right-radius: 12px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
+}
+
+.delete{
+    position: absolute;
+    top: 11px;
+    right: 15px;
+    font-size: x-large;
+    color: brown;
 }
 
 select{

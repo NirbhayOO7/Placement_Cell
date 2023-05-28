@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/interviews.css">
+
 <h2 style="text-align: center;">Interview page</h2>
 <% if(locals.user){ %>
     <div id="new-interview">
@@ -26,6 +27,7 @@
             <div class="interview">
                 <div>
                     <p><b><%= interview.company %></b></p>
+                    <a href="/interview/delete/<%= interview.id %>" class="delete"><i class="fa-solid fa-delete-left"></i></a>
                 </div>
                 <div>
                     <p><b>Date: <%= interview.date %></b></p>
@@ -68,3 +70,5 @@
     </div>
 
 <%}%>
+
+<script src="https://kit.fontawesome.com/01fcbb8cc8.js" crossorigin="anonymous"></script>

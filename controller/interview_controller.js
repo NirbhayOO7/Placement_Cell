@@ -88,3 +88,38 @@ module.exports.addStudent = async function(req, res){
     }
 }
 
+//delete interview and its related fields from student db.
+
+module.exports.delete = async function(req, res){
+    try {
+        // find interview by id and then populate the list of students associated to that interview
+        let interview = await Interviews.findById(req.params.id).populate('students.student');
+        if(!interview){
+            req.flash('error', 'Interview does not exits!');
+            return res.redirect('back');
+        }
+
+        let interviewId = interview.id;
+        let studentsList = interview.students;
+
+        for(let i=0; i<studentsList.length; i++){
+            // populate the interview attached in Student model
+            await studentsList[i].student.populate('interviews.interview');
+            studentsList[i].student.interviews = studentsList[i].student.interviews.filter((tempInterview, index, tempInterviewList)=>{
+
+                return (tempInterview.interview.id != interviewId);
+            });
+
+            await studentsList[i].student.save();
+
+        }
+        await Interviews.deleteOne({_id: req.params.id});
+
+        req.flash('success', 'Interview deleted!');
+        return res.redirect('back');
+
+    } catch (error) {
+        console.log('Error deleting interview:', error);
+        return res.redirect('back');
+    }
+}

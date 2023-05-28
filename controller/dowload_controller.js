@@ -27,10 +27,13 @@ module.exports.download = async function(req, res){
 
                 setTimeout(function () {
                     fs.unlinkSync(filePath); // delete this file after 30 seconds
-                  }, 30000)
+                  }, 30000);
 
-                  req.flash('success', `Download completed!`)
-                  return res.redirect('back');
+                  res.download(filePath, 'report.csv', (err)=>{
+                    if(err){
+                        if (err) res.status(404).send("<h1>Not found: 404</h1>");
+                    }
+                  })
             }
         })
         
